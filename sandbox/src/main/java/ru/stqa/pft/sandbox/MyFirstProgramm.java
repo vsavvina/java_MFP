@@ -7,13 +7,10 @@ public class MyFirstProgramm
         hello("Mir");
         hello("Mur");
 
-        Square s = new Square();
-        s.l = 5.0;
+        Square s = new Square(5);
         System.out.println("Площадь квадрата со стороной "+s.l+" = "+area(s));
 
-        Rectangle r = new Rectangle();
-        r.a = 4.0;
-        r.b = 3.0;
+        Rectangle r = new Rectangle(4,3);
         System.out.println("Площадь прямоугольного треугольника со сторонами "+r.a+" и "+r.b+" = "+area(r));
     }
 
