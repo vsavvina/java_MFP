@@ -7,18 +7,26 @@ public class MyFirstProgramm
         hello("Mir");
         hello("Mur");
 
-        double i = 4.0;
-        double l = 3.0;
-        System.out.println("Площадь прямоугольного треугольника со сторонами "+i+" и "+l+" = "+area(i,l));
+        Square s = new Square();
+        s.l = 5.0;
+        System.out.println("Площадь квадрата со стороной "+s.l+" = "+area(s));
+
+        Rectangle r = new Rectangle();
+        r.a = 4.0;
+        r.b = 3.0;
+        System.out.println("Площадь прямоугольного треугольника со сторонами "+r.a+" и "+r.b+" = "+area(r));
     }
 
     public static void hello(String word)
     {
         System.out.println("Hello, " + word);
     }
-
-    public static double area(double m, double n)
+    public static double area(Square s)
     {
-        return (m*n)/2;
+        return s.l*s.l;
+    }
+    public static double area(Rectangle r)
+    {
+        return (r.a*r.b)/2;
     }
 }
