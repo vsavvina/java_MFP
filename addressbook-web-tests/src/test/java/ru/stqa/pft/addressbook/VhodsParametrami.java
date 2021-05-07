@@ -42,8 +42,8 @@ public class VhodsParametrami {
   {
     //выделели вспомогательные методы, которые описаны ниже
     perehodvavtocredit();
-    vvodgodaavto("2018");
-    vvodstoimostiavto("200 001");
+    vvodgodaavto(new Vvodimiedanniegoda("2018"));
+    vvodstoimostiavto(new Vvodimiedanniesumm("200 001"));
     knopkapodboracredita();
   }
 
@@ -51,17 +51,17 @@ public class VhodsParametrami {
     wd.findElement(By.xpath("//div[@id='root']/div/div[2]/div[2]/div/div/div/div[2]/div/div[2]/div/div/div/form/div/div/div/div/div/div/div/div[3]/div/button/span")).click();
   }
 
-  private void vvodstoimostiavto(String rubli) throws InterruptedException {
+  private void vvodstoimostiavto(Vvodimiedanniesumm vvodimiedanniesumm) throws InterruptedException {
     wd.findElement(By.xpath("//input[@name='carPrice']")).click();
     wd.findElement(By.xpath("//input[@name='carPrice']")).clear();
-    wd.findElement(By.xpath("//input[@name='carPrice']")).sendKeys(rubli);
+    wd.findElement(By.xpath("//input[@name='carPrice']")).sendKeys(vvodimiedanniesumm.getRubli());
     Thread.sleep(1000);
   }
 
-  private void vvodgodaavto(String god) throws InterruptedException {
+  private void vvodgodaavto(Vvodimiedanniegoda vvodimiedanniegoda) throws InterruptedException {
     wd.findElement(By.xpath("//input[@name='carProductionDate']")).click();//если идентификатор в классе input
     wd.findElement(By.xpath("//input[@name='carProductionDate']")).clear();
-    wd.findElement(By.xpath("//input[@name='carProductionDate']")).sendKeys(god);
+    wd.findElement(By.xpath("//input[@name='carProductionDate']")).sendKeys(vvodimiedanniegoda.getGod());
     Thread.sleep(1000);
   }
 
